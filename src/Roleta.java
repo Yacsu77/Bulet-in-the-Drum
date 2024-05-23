@@ -2,6 +2,8 @@ import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
+import com.sun.tools.javac.Main;
+
 
 
 
@@ -114,18 +116,7 @@ public class Roleta {
      
 }
 
-    /**
-     * Metodo para embaralhar e definir aonde vai estar as balas de forma aleatoria 
-     * o metodo recebe acesso ao Vetor = "roleta" o metodo usa uma estrutura de 
-     * repetição para passar por todos os espaçoes da roleta aonde é definifo um 
-     * numero da variavel "numeroAsergeradoaleatorio" ele recebera de forma aleatoria 
-     * atraves do metodo "random" o numero 1 ou 2 atraves da estrutura de deciçao ele 
-     * recebera um valor entre B e V caso contrario erro
-     * 
-     * 1 = B 
-     * 2 = V 
-     * caso contrario = Erro
-     */
+
     public static void embaralha_roleta() {
         int numeroAsergeradoaleatorio = 0;
 
@@ -274,7 +265,10 @@ public class Roleta {
     
     public static void rodada(int jogador) {
 
-        if (contadorGlobal == 11){
+        if (contadorGlobal == 2){
+
+            AnimatedText.Animatext("Recarregando Arma...", 3, 2, 150, 150);
+
             iniciarJogo();
 
         } else if (jogador == 1) {
@@ -394,6 +388,8 @@ public class Roleta {
     public static void usarPoteDeRemedio(int jogador) {
     Limparterminal();
 
+    Animação.Animaçãoremedio();
+
         if (jogador == 1) {
             System.out.println("Jogador 1 usou o pote de remédio");
             VidaPlayer1++;
@@ -414,6 +410,8 @@ public class Roleta {
 
     public static void usarlupa(int jogador){
     Limparterminal();
+
+    Animação.AnimaçãoLupa();
         System.out.println("Voce usou a lupa 🔍");
 
                 if ( roleta[contadorGlobal].equals("V")){
@@ -468,6 +466,8 @@ public class Roleta {
     public static void Cigarro(int jogador){
     Limparterminal();
 
+    Animação.Animaçãocigarro();
+
 
     
         int numeroAleatorio = random.nextInt(2) + 1;
@@ -517,6 +517,8 @@ public class Roleta {
    public static void Amuleto(int jogador){
     Limparterminal();
 
+    Animação.Animaçãoaamuleto();
+
         if( jogador == 1){
             AmuletoPlayer1 = true;
             System.out.println("Voçê usou o amuleto.");
@@ -534,6 +536,8 @@ public class Roleta {
 
    public static void Algema( int jogador){
     Limparterminal();
+
+    Animação.Animaçãoalgema();
 
         if ( jogador == 1){
             Jogador2preso = true;
@@ -939,6 +943,9 @@ for ( int contadorvida = 0; contadorvida <= VidaPlayer2; contadorvida++ ){
                     tocar.start();
         }
     
+    public static void Remanejamento(){
+
+    }
     
     }
     
