@@ -9,24 +9,20 @@ public class sombeta {
         // Main method não faz nada aqui, pode ser usado para teste
     }
 
-    public static Clip som(String som) {
+    public static synchronized Clip som(String som) {
         pararSom(); // Pare qualquer som antes de iniciar um novo
+
         try {
-            Thread.sleep(1560); // Aguarda 100 milissegundos entre cada quadro
-        
-                try {
-                File file = new File(som);
-                clip = AudioSystem.getClip();
-                clip.open(AudioSystem.getAudioInputStream(file));
-                clip.loop(Clip.LOOP_CONTINUOUSLY); // Inicia a reprodução do áudio
-                } catch (Exception ex) {
-                ex.printStackTrace();
-                }
-                
-    } catch (InterruptedException e) {
-        e.printStackTrace();
-    }  
-    return clip;
+            File file = new File(som);
+            clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(file));
+            clip.loop(Clip.LOOP_CONTINUOUSLY); // Inicia a reprodução do áudio
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            clip = null; // Certifique-se de que o clip seja nulo em caso de falha
+        }
+
+        return clip;
     }
 
     public static Clip som1(String som) {
@@ -43,10 +39,14 @@ public class sombeta {
     }
 
    
-    public static void pararSom() {
-        if (clip != null && clip.isRunning()) {
+    public static synchronized void pararSom() {
+        if (clip != null) {
+            if (clip.isRunning()) {
+                clip.stop();
+            }
             clip.stop();
-            clip.close(); // Feche o recurso do Clip
+            clip.close();
+            clip = null;
         }
-    }
+}
 }

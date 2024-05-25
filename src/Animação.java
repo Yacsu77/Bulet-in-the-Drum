@@ -36,11 +36,7 @@ public class Animação {
 
             
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
 
@@ -62,11 +58,7 @@ public class Animação {
         System.out.println("                                                        #   __   #");
         System.out.println("                                                        \\########/");
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
 
@@ -91,11 +83,7 @@ public class Animação {
         System.out.println("                                                 #   __   #");
         System.out.println("                                                 \\########/");
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
 
 
     }
@@ -136,11 +124,8 @@ public class Animação {
 
             
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
+
 
         Roleta.Limparterminal();
         
@@ -165,11 +150,8 @@ public class Animação {
         System.out.println("                                                                #   __   #");
         System.out.println("                                                                \\########/");
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
+
 
         Roleta.Limparterminal();
 
@@ -195,11 +177,8 @@ public class Animação {
         System.out.println("                                                 \\########/");
         
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
+
 
 
     }
@@ -299,12 +278,12 @@ public static void arma(){
 
 
     String[] desenho = {
-            "                                                 ,________________________________",
-            "                                                 |__________,----------._ [____]  \"\"-,__  __...-----===\"",
-            "                                                         (_(||||||||||||)___________/   \"\"             |",
-            "                                                            `----------'        [ ))\"-,                |",
-            "                                                                                 \"\"    `,  _,--...___  |",
-            "                                                                                         `/          \"\"\""
+            "                                                 ,________________________________                                                                    ",
+            "                                                 |__________,----------._ [____]  \"\"-,__  __...-----===\"                                           ",
+            "                                                          (_(||||||||||||)___________/   \"\"             |                                            ",
+            "                                                            `----------'        [ ))\"-,                |                                             ",
+            "                                                                                 \"\"    `,  _,--...___  |                                            ",
+            "                                                                                         `/          \"\"\"                                           "
         };
 
         // Imprimir o desenho
@@ -317,24 +296,38 @@ public static void arma(){
 
 public static void AnimaçãoFaca() {
     for (int cont = 0; cont <= 5; cont++) {
-        for (int contoa = 0; contoa <= 40; contoa++) {
-            System.out.println();
-        }
 
         Roleta.Limparterminal();
+
+        int larguraTela = 150;
 
         Thread tocar = new Thread(()->sombeta.som1("corte.wav"));
             tocar.start();
 
 
         String[] faca = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                               ___________________________________ ______________________",
             "                                                               \\                                  | (_)     (_)    (_)   \\",
             "                                                                `.                                |  __________________   }",
             "                                                                  `-..........................____|_(                  )_/"
         };
 
-        int larguraTela = 150;
 
         for (String linha : faca) {
             int espacos = (larguraTela - linha.length()) / 2;
@@ -346,19 +339,30 @@ public static void AnimaçãoFaca() {
             System.out.println(linhaCentralizada);
         }
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
 
-        for (int conto = 0; conto <= 2; conto++) {
-            System.out.println();
-        }
+        
+        
 
         String[] faca2 = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                       ___________________________________ ______________________",
             "                                                       \\                                  | (_)     (_)    (_)   \\",
             "                                                        `.                                |  __________________   }",
@@ -375,13 +379,29 @@ public static void AnimaçãoFaca() {
             System.out.println(linhaCentralizada);
         }
 
+        Roleta.Timer(100);
+
         Roleta.Limparterminal();
 
-        for (int conta = 0; conta <= 2; conta++) {
-            System.out.println();
-        }
+        
 
         String[] faca3 = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                ___________________________________ ______________________",
             "                                                \\                                  | (_)     (_)    (_)   \\",
             "                                                 `.                                |  __________________   }",
@@ -398,21 +418,50 @@ public static void AnimaçãoFaca() {
             System.out.println(linhaCentralizada);
         }
 
-        Roleta.Limparterminal();
+            Roleta.Timer(100);
+
+            Roleta.Limparterminal();
+
+        
     }
 }
 
 
+
+
+
 public static void Animaçãoremedio(){
 
+    
+
+    int larguraTela = 150;
+
+
     for (int cont = 0; cont <= 5; cont++) {
-        for (int contoa = 0; contoa <= 40; contoa++) {
-            System.out.println();
-        }
+
+        Thread tocar = new Thread(()->sombeta.som1("Remedio.wav"));
+            tocar.start();
+
 
         Roleta.Limparterminal();
 
         String[] desenho = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                                                             ",
             "                                                                                             ",
             "                                                                                             ",
@@ -462,8 +511,6 @@ public static void Animaçãoremedio(){
             "                                                                                             "
         };
 
-        int larguraTela = 150;
-
         for (String linha : desenho) {
             int espacos = (larguraTela - linha.length()) / 2;
             StringBuilder linhaCentralizada = new StringBuilder();
@@ -473,20 +520,30 @@ public static void Animaçãoremedio(){
             linhaCentralizada.append(linha);
             System.out.println(linhaCentralizada);
         }
+            Roleta.Timer(100);
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+            Roleta.Limparterminal();
 
-        Roleta.Limparterminal();
-
-        for (int conto = 0; conto <= 2; conto++) {
-            System.out.println();
+        
         }
 
         String[] desenho1 = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                                                                    ",
             "                                                                                                    ",
             "                                                                                                    ",
@@ -536,6 +593,7 @@ public static void Animaçãoremedio(){
             "                                                                                                    "
         };
 
+
         for (String linha : desenho1) {
             int espacos = (larguraTela - linha.length()) / 2;
             StringBuilder linhaCentralizada = new StringBuilder();
@@ -545,14 +603,27 @@ public static void Animaçãoremedio(){
             linhaCentralizada.append(linha);
             System.out.println(linhaCentralizada);
         }
+            Roleta.Timer(100);
 
-        Roleta.Limparterminal();
-
-        for (int conta = 0; conta <= 2; conta++) {
-            System.out.println();
-        }
+            Roleta.Limparterminal();
 
         String[] desenho2 = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                                                                                           ",
             "                                                                                                                           ",
             "                                                                                                                           ",
@@ -602,77 +673,99 @@ public static void Animaçãoremedio(){
             "                                                                                                                           "
         };
 
-        for (String linha : desenho2) {
-            int espacos = (larguraTela - linha.length()) / 2;
+
+        for (String linha1 : desenho2) {
+            int espacos = (larguraTela - linha1.length()) / 2;
             StringBuilder linhaCentralizada = new StringBuilder();
             for (int i = 0; i < espacos; i++) {
                 linhaCentralizada.append(" ");
             }
-            linhaCentralizada.append(linha);
+            linhaCentralizada.append(linha1);
             System.out.println(linhaCentralizada);
         }
 
+        Roleta.Timer(100);
+
         Roleta.Limparterminal();
-    }
-}
+
+        }
+    
+
 
 public static void Animaçãoalgema(){
 
+    Thread tocar = new Thread(()->sombeta.som1("Algema.wav"));
+            tocar.start();
+
     for (int cont = 0; cont <= 5; cont++) {
-        for (int contoa = 0; contoa <= 40; contoa++) {
-            System.out.println();
-        }
+        
 
         Roleta.Limparterminal();
 
         String[] desenho = {
-            "                      ##############",
-            "                  ##..              mm##",
-            "              ##                          ##",
-            "            ##                              ##",
-            "          ++        ######      ####..        ##                                ##",
-            "        ##        ##                  ##        ##                          ##    ####",
-            "      ##      mm##                      ##        ##                    ##  ##        ########",
-            "    ##        ##                          ##      ..                  ##      ##        ##",
-            "    ##      ##                              ##              --##    ##      ####    ##  ##    ##",
-            "          ##                                                    ######        ####    ##      ##",
-            "  ##      ##                                  ##                ##    ##    ##      ####",
-            "  ##      ##                                  ##          mm    ##  ####  ##          ##  ##  ##",
-            "  ##                                          ##    ######  ##  ##    ####              ########",
-            "  ##                                          ##  ..            ##    ##                        ##",
-            "  ##      ##                                  ##        ######  ##                    ##        ##",
-            "  ##      ##                                  ##                ##                    ##############",
-            "          ##                                  ##                ##                  MM                ##",
-            "    ##                                      ##                ..                  ##      ######      ##",
-            "    ##      ##                              ##      ##########                    ##      ##          ##",
-            "      ##      ##                          ##      ##                              ##      ##  ##      ##",
-            "      ##        ##                      ##                                        ##      ##  ##      ##",
-            "        ##        ####              ##..        ##                                ##      ##  ##      ##",
-            "          ##          ..##########            ##                                ##          ##          ##",
-            "            ##                            ::##                              ##                              ##",
-            "                ##                      ##                                ##          ..##########--          ##",
-            "                    ####        ::####                                  ##        @@##              ####        ##",
-            "                                                                      ##        ##                      ##        ##",
-            "                                                                      ##      ##                          ##      ##",
-            "                                                                    ##      ##                              ##      ##",
-            "                                                                    ##      ##                                      ##",
-            "                                                                          ##                                  ##",
-            "                                                                  ##      ##                                  ##      ##",
-            "                                                                  ##      ##                                  ##      ##",
-            "                                                                  ##      ##                                          ##",
-            "                                                                  ##      ##                                          ##",
-            "                                                                  ##      ##                                  ##      ##",
-            "                                                                          ##                                  ##      ##",
-            "                                                                    ##                                        --    ++",
-            "                                                                    ##      ##                              ##      ##",
-            "                                                                              ##                          ##",
-            "                                                                      ##        ##                      ##        ##",
-            "                                                                        ##        ##                  ##        ##",
-            "                                                                          ##        ..####      ####::        ##",
-            "                                                                            ##                              ##",
-            "                                                                              ##                          ##",
-            "                                                                                  ####              ++##",
-            "                                                                                        ##########"
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                             ##############",
+            "                                                         ##..              mm##",
+            "                                                     ##                          ##",
+            "                                                   ##                              ##",
+            "                                                 ++        ######      ####..        ##                                ##",
+            "                                               ##        ##                  ##        ##                          ##    ####",
+            "                                             ##      mm##                      ##        ##                    ##  ##        ########",
+            "                                           ##        ##                          ##      ..                  ##      ##        ##",
+            "                                           ##      ##                              ##              --##    ##      ####    ##  ##    ##",
+            "                                                 ##                                                    ######        ####    ##      ##",
+            "                                         ##      ##                                  ##                ##    ##    ##      ####",
+            "                                         ##      ##                                  ##          mm    ##  ####  ##          ##  ##  ##",
+            "                                         ##                                          ##    ######  ##  ##    ####              ########",
+            "                                         ##                                          ##  ..            ##    ##                        ##",
+            "                                         ##      ##                                  ##        ######  ##                    ##        ##",
+            "                                         ##      ##                                  ##                ##                    ##############",
+            "                                                 ##                                  ##                ##                  MM                ##",
+            "                                           ##                                      ##                ..                  ##      ######      ##",
+            "                                           ##      ##                              ##      ##########                    ##      ##          ##",
+            "                                             ##      ##                          ##      ##                              ##      ##  ##      ##",
+            "                                             ##        ##                      ##                                        ##      ##  ##      ##",
+            "                                               ##        ####              ##..        ##                                ##      ##  ##      ##",
+            "                                                 ##          ..##########            ##                                ##          ##          ##",
+            "                                                   ##                            ::##                              ##                              ##",
+            "                                                       ##                      ##                                ##          ..##########--          ##",
+            "                                                           ####        ::####                                  ##        @@##              ####        ##",
+            "                                                                                                             ##        ##                      ##        ##",
+            "                                                                                                             ##      ##                          ##      ##",
+            "                                                                                                           ##      ##                              ##      ##",
+            "                                                                                                           ##      ##                                      ##",
+            "                                                                                                                 ##                                  ##",
+            "                                                                                                         ##      ##                                  ##      ##",
+            "                                                                                                         ##      ##                                  ##      ##",
+            "                                                                                                         ##      ##                                          ##",
+            "                                                                                                         ##      ##                                          ##",
+            "                                                                                                         ##      ##                                  ##      ##",
+            "                                                                                                                 ##                                  ##      ##",
+            "                                                                                                           ##                                        --    ++",
+            "                                                                                                           ##      ##                              ##      ##",
+            "                                                                                                                     ##                          ##",
+            "                                                                                                             ##        ##                      ##        ##",
+            "                                                                                                               ##        ##                  ##        ##",
+            "                                                                                                                 ##        ..####      ####::        ##",
+            "                                                                                                                   ##                              ##",
+            "                                                                                                                     ##                          ##",
+            "                                                                                                                         ####              ++##",
+            "                                                                                                                               ##########"
         };
 
         int larguraTela = 150;
@@ -687,66 +780,76 @@ public static void Animaçãoalgema(){
             System.out.println(linhaCentralizada);
         }
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
 
-        for (int conto = 0; conto <= 2; conto++) {
-            System.out.println();
-        }
+        
 
         String[] desenho1 = {
-            "                                           ##############",
-            "                                       ##..              mm##",
-            "                                   ##                          ##",
-            "                                 ##                              ##",
-            "                               ++        ######      ####..        ##                                ##",
-            "                             ##        ##                  ##        ##                          ##    ####",
-            "                           ##      mm##                      ##        ##                    ##  ##        ########",
-            "                         ##        ##                          ##      ..                  ##      ##        ##",
-            "                         ##      ##                              ##              --##    ##      ####    ##  ##    ##",
-            "                               ##                                                    ######        ####    ##      ##",
-            "                       ##      ##                                  ##                ##    ##    ##      ####",
-            "                       ##      ##                                  ##          mm    ##  ####  ##          ##  ##  ##",
-            "                       ##                                          ##    ######  ##  ##    ####              ########",
-            "                       ##                                          ##  ..            ##    ##                        ##",
-            "                       ##      ##                                  ##        ######  ##                    ##        ##",
-            "                       ##      ##                                  ##                ##                    ##############",
-            "                               ##                                  ##                ##                  MM                ##",
-            "                         ##                                      ##                ..                  ##      ######      ##",
-            "                         ##      ##                              ##      ##########                    ##      ##          ##",
-            "                           ##      ##                          ##      ##                              ##      ##  ##      ##",
-            "                           ##        ##                      ##                                        ##      ##  ##      ##",
-            "                             ##        ####              ##..        ##                                ##      ##  ##      ##",
-            "                               ##          ..##########            ##                                ##          ##          ##",
-            "                                 ##                            ::##                              ##                              ##",
-            "                                     ##                      ##                                ##          ..##########--          ##",
-            "                                         ####        ::####                                  ##        @@##              ####        ##",
-            "                                                                                           ##        ##                      ##        ##",
-            "                                                                                           ##      ##                          ##      ##",
-            "                                                                                         ##      ##                              ##      ##",
-            "                                                                                         ##      ##                                      ##",
-            "                                                                                               ##                                  ##",
-            "                                                                                       ##      ##                                  ##      ##",
-            "                                                                                       ##      ##                                  ##      ##",
-            "                                                                                       ##      ##                                          ##",
-            "                                                                                       ##      ##                                          ##",
-            "                                                                                       ##      ##                                  ##      ##",
-            "                                                                                               ##                                  ##      ##",
-            "                                                                                         ##                                        --    ++",
-            "                                                                                         ##      ##                              ##      ##",
-            "                                                                                                   ##                          ##",
-            "                                                                                           ##        ##                      ##        ##",
-            "                                                                                             ##        ##                  ##        ##",
-            "                                                                                               ##        ..####      ####::        ##",
-            "                                                                                                 ##                              ##",
-            "                                                                                                   ##                          ##",
-            "                                                                                                       ####              ++##",
-            "                                                                                                             ##########"
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                  ##############",
+            "                                                                              ##..              mm##",
+            "                                                                          ##                          ##",
+            "                                                                        ##                              ##",
+            "                                                                      ++        ######      ####..        ##                                ##",
+            "                                                                    ##        ##                  ##        ##                          ##    ####",
+            "                                                                  ##      mm##                      ##        ##                    ##  ##        ########",
+            "                                                                ##        ##                          ##      ..                  ##      ##        ##",
+            "                                                                ##      ##                              ##              --##    ##      ####    ##  ##    ##",
+            "                                                                      ##                                                    ######        ####    ##      ##",
+            "                                                              ##      ##                                  ##                ##    ##    ##      ####",
+            "                                                              ##      ##                                  ##          mm    ##  ####  ##          ##  ##  ##",
+            "                                                              ##                                          ##    ######  ##  ##    ####              ########",
+            "                                                              ##                                          ##  ..            ##    ##                        ##",
+            "                                                              ##      ##                                  ##        ######  ##                    ##        ##",
+            "                                                              ##      ##                                  ##                ##                    ##############",
+            "                                                                      ##                                  ##                ##                  MM                ##",
+            "                                                                ##                                      ##                ..                  ##      ######      ##",
+            "                                                                ##      ##                              ##      ##########                    ##      ##          ##",
+            "                                                                  ##      ##                          ##      ##                              ##      ##  ##      ##",
+            "                                                                  ##        ##                      ##                                        ##      ##  ##      ##",
+            "                                                                    ##        ####              ##..        ##                                ##      ##  ##      ##",
+            "                                                                      ##          ..##########            ##                                ##          ##          ##",
+            "                                                                        ##                            ::##                              ##                              ##",
+            "                                                                            ##                      ##                                ##          ..##########--          ##",
+            "                                                                                ####        ::####                                  ##        @@##              ####        ##",
+            "                                                                                                                                  ##        ##                      ##        ##",
+            "                                                                                                                                  ##      ##                          ##      ##",
+            "                                                                                                                                ##      ##                              ##      ##",
+            "                                                                                                                                ##      ##                                      ##",
+            "                                                                                                                                      ##                                  ##",
+            "                                                                                                                              ##      ##                                  ##      ##",
+            "                                                                                                                              ##      ##                                  ##      ##",
+            "                                                                                                                              ##      ##                                          ##",
+            "                                                                                                                              ##      ##                                          ##",
+            "                                                                                                                              ##      ##                                  ##      ##",
+            "                                                                                                                                      ##                                  ##      ##",
+            "                                                                                                                                ##                                        --    ++",
+            "                                                                                                                                ##      ##                              ##      ##",
+            "                                                                                                                                          ##                          ##",
+            "                                                                                                                                  ##        ##                      ##        ##",
+            "                                                                                                                                    ##        ##                  ##        ##",
+            "                                                                                                                                      ##        ..####      ####::        ##",
+            "                                                                                                                                        ##                              ##",
+            "                                                                                                                                          ##                          ##",
+            "                                                                                                                                              ####              ++##",
+            "                                                                                                                                                    ##########"
         };
 
         for (String linha : desenho1) {
@@ -761,58 +864,72 @@ public static void Animaçãoalgema(){
 
         Roleta.Limparterminal();
 
-        for (int conta = 0; conta <= 2; conta++) {
-            System.out.println();
-        }
+        Roleta.Timer(100);
 
         String[] desenho2 = {
-            "                                                                         ##############",
-            "                                                                     ##..              mm##",
-            "                                                                 ##                          ##",
-            "                                                               ##                              ##",
-            "                                                             ++        ######      ####..        ##                                ##",
-            "                                                           ##        ##                  ##        ##                          ##    ####",
-            "                                                         ##      mm##                      ##        ##                    ##  ##        ########",
-            "                                                       ##        ##                          ##      ..                  ##      ##        ##",
-            "                                                       ##      ##                              ##              --##    ##      ####    ##  ##    ##",
-            "                                                             ##                                                    ######        ####    ##      ##",
-            "                                                     ##      ##                                  ##                ##    ##    ##      ####",
-            "                                                     ##      ##                                  ##          mm    ##  ####  ##          ##  ##  ##",
-            "                                                     ##                                          ##    ######  ##  ##    ####              ########",
-            "                                                     ##                                          ##  ..            ##    ##                        ##",
-            "                                                     ##      ##                                  ##        ######  ##                    ##        ##",
-            "                                                     ##      ##                                  ##                ##                    ##############",
-            "                                                             ##                                  ##                ##                  MM                ##",
-            "                                                       ##                                      ##                ..                  ##      ######      ##",
-            "                                                       ##      ##                              ##      ##########                    ##      ##          ##",
-            "                                                         ##      ##                          ##      ##                              ##      ##  ##      ##",
-            "                                                         ##        ##                      ##                                        ##      ##  ##      ##",
-            "                                                           ##        ####              ##..        ##                                ##      ##  ##      ##",
-            "                                                             ##          ..##########            ##                                ##          ##          ##",
-            "                                                               ##                            ::##                              ##                              ##",
-            "                                                                   ##                      ##                                ##          ..##########--          ##",
-            "                                                                       ####        ::####                                  ##        @@##              ####        ##",
-            "                                                                                                                         ##        ##                      ##        ##",
-            "                                                                                                                         ##      ##                          ##      ##",
-            "                                                                                                                       ##      ##                              ##      ##",
-            "                                                                                                                       ##      ##                                      ##",
-            "                                                                                                                             ##                                  ##",
-            "                                                                                                                     ##      ##                                  ##      ##",
-            "                                                                                                                     ##      ##                                  ##      ##",
-            "                                                                                                                     ##      ##                                          ##",
-            "                                                                                                                     ##      ##                                          ##",
-            "                                                                                                                     ##      ##                                  ##      ##",
-            "                                                                                                                             ##                                  ##      ##",
-            "                                                                                                                       ##                                        --    ++",
-            "                                                                                                                       ##      ##                              ##      ##",
-            "                                                                                                                                 ##                          ##",
-            "                                                                                                                         ##        ##                      ##        ##",
-            "                                                                                                                           ##        ##                  ##        ##",
-            "                                                                                                                             ##        ..####      ####::        ##",
-            "                                                                                                                               ##                              ##",
-            "                                                                                                                                 ##                          ##",
-            "                                                                                                                                     ####              ++##",
-            "                                                                                                                                           ##########"
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                                                ##############",
+            "                                                                                                            ##..              mm##",
+            "                                                                                                        ##                          ##",
+            "                                                                                                      ##                              ##",
+            "                                                                                                    ++        ######      ####..        ##                                ##",
+            "                                                                                                  ##        ##                  ##        ##                          ##    ####",
+            "                                                                                                ##      mm##                      ##        ##                    ##  ##        ########",
+            "                                                                                              ##        ##                          ##      ..                  ##      ##        ##",
+            "                                                                                              ##      ##                              ##              --##    ##      ####    ##  ##    ##",
+            "                                                                                                    ##                                                    ######        ####    ##      ##",
+            "                                                                                            ##      ##                                  ##                ##    ##    ##      ####",
+            "                                                                                            ##      ##                                  ##          mm    ##  ####  ##          ##  ##  ##",
+            "                                                                                            ##                                          ##    ######  ##  ##    ####              ########",
+            "                                                                                            ##                                          ##  ..            ##    ##                        ##",
+            "                                                                                            ##      ##                                  ##        ######  ##                    ##        ##",
+            "                                                                                            ##      ##                                  ##                ##                    ##############",
+            "                                                                                                    ##                                  ##                ##                  MM                ##",
+            "                                                                                              ##                                      ##                ..                  ##      ######      ##",
+            "                                                                                              ##      ##                              ##      ##########                    ##      ##          ##",
+            "                                                                                                ##      ##                          ##      ##                              ##      ##  ##      ##",
+            "                                                                                                ##        ##                      ##                                        ##      ##  ##      ##",
+            "                                                                                                  ##        ####              ##..        ##                                ##      ##  ##      ##",
+            "                                                                                                    ##          ..##########            ##                                ##          ##          ##",
+            "                                                                                                      ##                            ::##                              ##                              ##",
+            "                                                                                                          ##                      ##                                ##          ..##########--          ##",
+            "                                                                                                              ####        ::####                                  ##        @@##              ####        ##",
+            "                                                                                                                                                                ##        ##                      ##        ##",
+            "                                                                                                                                                                ##      ##                          ##      ##",
+            "                                                                                                                                                              ##      ##                              ##      ##",
+            "                                                                                                                                                              ##      ##                                      ##",
+            "                                                                                                                                                                    ##                                  ##",
+            "                                                                                                                                                            ##      ##                                  ##      ##",
+            "                                                                                                                                                            ##      ##                                  ##      ##",
+            "                                                                                                                                                            ##      ##                                          ##",
+            "                                                                                                                                                            ##      ##                                          ##",
+            "                                                                                                                                                            ##      ##                                  ##      ##",
+            "                                                                                                                                                                    ##                                  ##      ##",
+            "                                                                                                                                                              ##                                        --    ++",
+            "                                                                                                                                                              ##      ##                              ##      ##",
+            "                                                                                                                                                                        ##                          ##",
+            "                                                                                                                                                                ##        ##                      ##        ##",
+            "                                                                                                                                                                  ##        ##                  ##        ##",
+            "                                                                                                                                                                    ##        ..####      ####::        ##",
+            "                                                                                                                                                                      ##                              ##",
+            "                                                                                                                                                                        ##                          ##",
+            "                                                                                                                                                                            ####              ++##",
+            "                                                                                                                                                                                  ##########"
         };
 
         for (String linha : desenho2) {
@@ -824,6 +941,8 @@ public static void Animaçãoalgema(){
             linhaCentralizada.append(linha);
             System.out.println(linhaCentralizada);
         }
+
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
     }
@@ -833,39 +952,56 @@ public static void AnimaçãoLupa(){
 
 
     for (int cont = 0; cont <= 5; cont++) {
-        for (int contoa = 0; contoa <= 40; contoa++) {
-            System.out.println();
-        }
+
+        Thread tocar = new Thread(()->sombeta.som1("Lupa.wav"));
+            tocar.start();
+
 
         Roleta.Limparterminal();
 
         String[] desenho = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                                                                    ",
             "                                                                                                    ",
             "                                                                                                    ",
             "                                                                                                    ",
             "                                                                                                    ",
-            "                ##############                                                                      ",
-            "              ##################                                                                    ",
-            "            ######          ######                                                                  ",
-            "            ####              ####                                                                  ",
-            "          ######                ####                                                                ",
-            "          ####                  ####                                                                ",
-            "          ####                  ####                                                                ",
-            "            ####              ####                                                                  ",
-            "            ####              ####                                                                  ",
-            "            ######          ######                                                                  ",
-            "              ##################                                                                    ",
-            "                  ##############                                                                    ",
-            "                            ######                                                                  ",
-            "                              ######                                                                ",
-            "                                ####                                                              ",
-            "                                ######                                                            ",
-            "                                  ######                                                          ",
-            "                                    ####                                                          ",
-            "                                                                                                    ",
-            "                                                                                                    ",
-            "                                                                                                    "
+            "                                                       ##############                                                                      ",
+            "                                                     ##################                                                                    ",
+            "                                                   ######          ######                                                                  ",
+            "                                                   ####              ####                                                                  ",
+            "                                                 ######                ####                                                                ",
+            "                                                 ####                  ####                                                                ",
+            "                                                 ####                  ####                                                                ",
+            "                                                   ####              ####                                                                  ",
+            "                                                   ####              ####                                                                  ",
+            "                                                   ######          ######                                                                  ",
+            "                                                     ##################                                                                    ",
+            "                                                         ##############                                                                    ",
+            "                                                                   ######                                                                  ",
+            "                                                                     ######                                                                ",
+            "                                                                       ####                                                              ",
+            "                                                                       ######                                                            ",
+            "                                                                         ######                                                          ",
+            "                                                                           ####                                                          ",
+            "                                                                                                                                           ",
+            "                                                                                                                                           ",
+            "                                                                                                                                           "
         };
 
         int larguraTela = 150;
@@ -880,45 +1016,53 @@ public static void AnimaçãoLupa(){
             System.out.println(linhaCentralizada);
         }
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
 
-        for (int conto = 0; conto <= 2; conto++) {
-            System.out.println();
-        }
-
         String[] desenho1 = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                                                                                              ",
             "                                                                                                                              ",
             "                                                                                                                              ",
             "                                                                                                                              ",
             "                                                                                                                              ",
-            "                                          ##############                                                                      ",
-            "                                        ##################                                                                    ",
-            "                                      ######          ######                                                                  ",
-            "                                      ####              ####                                                                  ",
-            "                                    ######                ####                                                                ",
-            "                                    ####                  ####                                                                ",
-            "                                    ####                  ####                                                                ",
-            "                                      ####              ####                                                                  ",
-            "                                      ####              ####                                                                  ",
-            "                                      ######          ######                                                                  ",
-            "                                        ##################                                                                    ",
-            "                                            ##############                                                                    ",
-            "                                                      ######                                                                  ",
-            "                                                        ######                                                                ",
-            "                                                          ####                                                              ",
-            "                                                          ######                                                            ",
-            "                                                            ######                                                          ",
-            "                                                              ####                                                          ",
-            "                                                                                                                              ",
-            "                                                                                                                              ",
-            "                                                                                                                              "
+            "                                                                                 ##############                                                                      ",
+            "                                                                               ##################                                                                    ",
+            "                                                                             ######          ######                                                                  ",
+            "                                                                             ####              ####                                                                  ",
+            "                                                                           ######                ####                                                                ",
+            "                                                                           ####                  ####                                                                ",
+            "                                                                           ####                  ####                                                                ",
+            "                                                                             ####              ####                                                                  ",
+            "                                                                             ####              ####                                                                  ",
+            "                                                                             ######          ######                                                                  ",
+            "                                                                               ##################                                                                    ",
+            "                                                                                   ##############                                                                    ",
+            "                                                                                             ######                                                                  ",
+            "                                                                                               ######                                                                ",
+            "                                                                                                 ####                                                              ",
+            "                                                                                                 ######                                                            ",
+            "                                                                                                   ######                                                          ",
+            "                                                                                                     ####                                                          ",
+            "                                                                                                                                                                     ",
+            "                                                                                                                                                                     ",
+            "                                                                                                                                                                     "
         };
 
         for (String linha : desenho1) {
@@ -931,39 +1075,54 @@ public static void AnimaçãoLupa(){
             System.out.println(linhaCentralizada);
         }
 
+        Roleta.Timer(100);
+
         Roleta.Limparterminal();
 
-        for (int conta = 0; conta <= 2; conta++) {
-            System.out.println();
-        }
 
         String[] desenho2 = {
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
             "                                                                                                                          ",
             "                                                                                                                          ",
             "                                                                                                                          ",
             "                                                                                                                          ",
             "                                                                                                                          ",
-            "                                      ##############                                                                      ",
-            "                                    ##################                                                                    ",
-            "                                  ######          ######                                                                  ",
-            "                                  ####              ####                                                                  ",
-            "                                ######                ####                                                                ",
-            "                                ####                  ####                                                                ",
-            "                                ####                  ####                                                                ",
-            "                                  ####              ####                                                                  ",
-            "                                  ####              ####                                                                  ",
-            "                                  ######          ######                                                                  ",
-            "                                    ##################                                                                    ",
-            "                                        ##############                                                                    ",
-            "                                                  ######                                                                  ",
-            "                                                    ######                                                                ",
-            "                                                      ####                                                              ",
-            "                                                      ######                                                            ",
-            "                                                        ######                                                          ",
-            "                                                          ####                                                          ",
-            "                                                                                                                          ",
-            "                                                                                                                          ",
-            "                                                                                                                          "
+            "                                                                             ##############                                                                      ",
+            "                                                                           ##################                                                                    ",
+            "                                                                         ######          ######                                                                  ",
+            "                                                                         ####              ####                                                                  ",
+            "                                                                       ######                ####                                                                ",
+            "                                                                       ####                  ####                                                                ",
+            "                                                                       ####                  ####                                                                ",
+            "                                                                         ####              ####                                                                  ",
+            "                                                                         ####              ####                                                                  ",
+            "                                                                         ######          ######                                                                  ",
+            "                                                                           ##################                                                                    ",
+            "                                                                               ##############                                                                    ",
+            "                                                                                         ######                                                                  ",
+            "                                                                                           ######                                                                ",
+            "                                                                                             ####                                                              ",
+            "                                                                                             ######                                                            ",
+            "                                                                                               ######                                                          ",
+            "                                                                                                 ####                                                          ",
+            "                                                                                                                                                                 ",
+            "                                                                                                                                                                 ",
+            "                                                                                                                                                                 "
         };
 
         for (String linha : desenho2) {
@@ -975,6 +1134,8 @@ public static void AnimaçãoLupa(){
             linhaCentralizada.append(linha);
             System.out.println(linhaCentralizada);
         }
+
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
     }
@@ -1121,20 +1282,36 @@ public static void Animaçãocigarro(){
         Roleta.Limparterminal();
 
         String[] desenho = {
-            " a,  8a",
-            " `8, `8)                            ,adPPRg,",
-            "  8)  ]8                        ,ad888888888b",
-            " ,8' ,8'                    ,gPPR888888888888",
-            ",8' ,8'                 ,ad8\"\"   `Y888888888P",
-            "8)  8)              ,ad8\"\"        (8888888\"\"",
-            "8,  8,          ,ad8\"\"            d888\"\"",
-            "`8, `8,     ,ad8\"\"            ,ad8\"\"",
-            " `8, `" ,"ad8\"            ,ad8\"\"",
-            "    ,gPPR8b           ,ad8\"\"",
-            "   dP:::::Yb      ,ad8\"\"",
-            "   8):::::(8  ,ad8\"\"",
-            "   Yb:;;;:d888\"\"  Normand",
-            "    \"8ggg8P\"      Veilleux"
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                        a,  8a",
+            "                                        `8, `8)                            ,adPPRg,",
+            "                                         8)  ]8                        ,ad888888888b",
+            "                                        ,8' ,8'                    ,gPPR888888888888",
+            "                                       ,8' ,8'                 ,ad8\"\"   `Y888888888P",
+            "                                       8)  8)              ,ad8\"\"        (8888888\"\"",
+            "                                       8,  8,          ,ad8\"\"            d888\"\"",
+            "                                       `8, `8,     ,ad8\"\"            ,ad8\"\"",
+            "                                        `8, `" ,"ad8\"            ,ad8\"\"",
+            "                                           ,gPPR8b           ,ad8\"\"",
+            "                                          dP:::::Yb      ,ad8\"\"",
+            "                                          8):::::(8  ,ad8\"\"",
+            "                                          Yb:;;;:d888\"\"  ",
+            "                                           \"8ggg8P\"      "
         };
 
         int larguraTela = 150;
@@ -1149,33 +1326,42 @@ public static void Animaçãocigarro(){
             System.out.println(linhaCentralizada);
         }
 
-        try {
-            Thread.sleep(100);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
 
-        for (int conto = 0; conto <= 2; conto++) {
-            System.out.println();
-        }
 
         String[] desenho1 = {
-            " a,  8a",
-            " `8, `8)                            ,adPPRg,",
-            "  8)  ]8                        ,ad888888888b",
-            " ,8' ,8'                    ,gPPR888888888888",
-            ",8' ,8'                 ,ad8\"\"   `Y888888888P",
-            "                     ,ad8\"\"        (8888888\"\"",
-            "                 ,ad8\"\"            d888\"\"",
-            "            ,ad8\"\"            ,ad8\"\"",
-            "       " ,"ad8\"            ,ad8\"\"",
-            "    ,gPPR8b           ,ad8\"\"",
-            "   dP:::::Yb      ,ad8\"\"",
-            "   8):::::(8  ,ad8\"\"",
-            "   Yb:;;;:d888\"\"  Normand",
-            "    \"8ggg8P\"      Veilleux"
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                        a,  8a",
+            "                                        `8, `8)                            ,adPPRg,",
+            "                                         8)  ]8                        ,ad888888888b",
+            "                                        ,8' ,8'                    ,gPPR888888888888",
+            "                                       ,8' ,8'                 ,ad8\"\"   `Y888888888P",
+            "                                                            ,ad8\"\"        (8888888\"\"",
+            "                                                        ,ad8\"\"            d888\"\"",
+            "                                                   ,ad8\"\"            ,ad8\"\"",
+            "                                              " ,"ad8\"            ,ad8\"\"",
+            "                                           ,gPPR8b           ,ad8\"\"",
+            "                                          dP:::::Yb      ,ad8\"\"",
+            "                                          8):::::(8  ,ad8\"\"",
+            "                                          Yb:;;;:d888\"\"  ",
+            "                                           \"8ggg8P\"      "
         };
 
         for (String linha : desenho1) {
@@ -1190,25 +1376,39 @@ public static void Animaçãocigarro(){
 
         Roleta.Limparterminal();
 
-        for (int conta = 0; conta <= 2; conta++) {
-            System.out.println();
-        }
+        Roleta.Timer(100);
 
         String[] desenho2 = {
-            " a,  8a",
-            " `8, `8)                            ,adPPRg,",
-            "                                 ,ad888888888b",
-            "                             ,gPPR888888888888",
-            "                        ,ad8\"\"   `Y888888888P",
-            "                     ,ad8\"\"        (8888888\"\"",
-            "                 ,ad8\"\"            d888\"\"",
-            "            ,ad8\"\"            ,ad8\"\"",
-            "       " ,"ad8\"            ,ad8\"\"",
-            "    ,gPPR8b           ,ad8\"\"",
-            "   dP:::::Yb      ,ad8\"\"",
-            "   8):::::(8  ,ad8\"\"",
-            "   Yb:;;;:d888\"\"  Normand",
-            "    \"8ggg8P\"      Veilleux"
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                                                                             ",
+            "                                        a,  8a",
+            "                                        `8, `8)                            ,adPPRg,",
+            "                                                                        ,ad888888888b",
+            "                                                                    ,gPPR888888888888",
+            "                                                               ,ad8\"\"   `Y888888888P",
+            "                                                            ,ad8\"\"        (8888888\"\"",
+            "                                                        ,ad8\"\"            d888\"\"",
+            "                                                   ,ad8\"\"            ,ad8\"\"",
+            "                                              " ,"ad8\"            ,ad8\"\"",
+            "                                           ,gPPR8b           ,ad8\"\"",
+            "                                          dP:::::Yb      ,ad8\"\"",
+            "                                          8):::::(8  ,ad8\"\"",
+            "                                          Yb:;;;:d888\"\"  ",
+            "                                           \"8ggg8P\"      "
         };
 
         for (String linha : desenho2) {
@@ -1220,6 +1420,8 @@ public static void Animaçãocigarro(){
             linhaCentralizada.append(linha);
             System.out.println(linhaCentralizada);
         }
+
+        Roleta.Timer(100);
 
         Roleta.Limparterminal();
     }

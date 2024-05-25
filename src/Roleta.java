@@ -43,6 +43,8 @@ public class Roleta {
 
     public static int Chaveparainvetario = 0;
 
+    public static String coraçãovida = ":heart:";
+    public static String coraçãomorte = ":skull:";
 
 
 
@@ -274,15 +276,16 @@ public class Roleta {
         } else if (jogador == 1) {
 
             if (Jogador1preso == true){
-                System.out.println("Putz o " + player1Nome + " está preso, vez do jogador 2!");
+
+                AnimatedText.Animatext("Putz o " + player1Nome + " está preso, vez do jogador 2!", 5, 2, 100, 150);
+                Limparterminal();
                 Jogador1preso = false;
                 rodada(jogador2);
             }
 
-            System.out.println("Contador Globlal: " + contadorGlobal);
-            System.out.printf("Rodada: %s\n1. Atirar sem si  | 2. Atirar no inimigo\n\n", player1Nome);
+
             imprimirInventario(jogador1);
-            System.out.print("Escolha:");
+            AnimatedText.Animatext("Escolha: ", 1, 0, 20, 150);
             escolhaplayer1 = ler.nextInt();
             escolhaDoJogador(jogador1, escolhaplayer1);
            
@@ -290,15 +293,14 @@ public class Roleta {
         } else if (jogador == 2) {
 
             if (Jogador2preso == true){
-                System.out.println("Putz o " + player2Nome + " está preso, vez do jogador 1!");
+                AnimatedText.Animatext("Putz o " + player2Nome + " está preso, vez do jogador 1!", 5, 2, 100, 150);
                 Jogador2preso = false;
                 rodada(jogador1);
             }
             
-            System.out.println("Contador Globlal: " + contadorGlobal);
-            System.out.printf("Rodada: %s\n1. Atirar sem si  | 2. Atirar no inimigo\n\n", player2Nome);
+
             imprimirInventario(jogador2);
-            System.out.print("Escolha:");
+            AnimatedText.Animatext("Escolha: ", 1, 0, 20, 150);
             escolhaplayer2 = ler.nextInt();
             escolhaDoJogador(jogador2, escolhaplayer2);
            
@@ -312,23 +314,60 @@ public class Roleta {
     public static void distribuirItens() {
         String[] itensDisponiveis = {Lupa, Potederemedio, Faca, cigarro, Algema, Amuleto};
         Random random = new Random();
+        int acessarintens1 =0;
+        int acessarintens2 = 0;
+        int limpar =0;
+        int indexItem1 =0;
+        int indexItem2 =0;
 
-        for (int cont = 0; cont < 4; cont++) {
-            // Escolher aleatoriamente um item para o jogador 1
-            int indexItem1 = random.nextInt(itensDisponiveis.length);
-            while (inventarioPlayer1[cont] != null) { // Verificar se a posição já está ocupada
-                indexItem1 = random.nextInt(itensDisponiveis.length);
-            }
-            inventarioPlayer1[cont] = itensDisponiveis[indexItem1];
+            for (int cont = 0; cont < 4; cont++) {
 
-            // Escolher aleatoriamente um item para o jogador 2
-            int indexItem2 = random.nextInt(itensDisponiveis.length);
-            while (inventarioPlayer2[cont] != null || indexItem2 == indexItem1) { // Verificar se a posição já está ocupada ou se é o mesmo item do jogador 1
-                indexItem2 = random.nextInt(itensDisponiveis.length);
+                if(acessarintens1 == 7 ){
+                    acessarintens1 = 0;
+                }
+                
+                if (inventarioPlayer1[acessarintens1] != null ){
+                    while (inventarioPlayer1[acessarintens1] != null) {
+                        acessarintens1++;
+                            if (acessarintens1 == 7){
+                                inventarioPlayer2[limpar] = null;
+                            }
+                    }
+                    indexItem1 = random.nextInt(itensDisponiveis.length);
+
+                }else {
+                    indexItem1 = random.nextInt(itensDisponiveis.length);
+                }
+                inventarioPlayer1[acessarintens1] = itensDisponiveis[indexItem1];
+
+
             }
-            inventarioPlayer2[cont] = itensDisponiveis[indexItem2];
+
+            for (int cont = 0; cont < 4; cont++) {
+
+                if(acessarintens2 == 7 ){
+                    acessarintens2 = 0;
+                }
+                
+                if (inventarioPlayer2[acessarintens2] != null ){
+                    while (inventarioPlayer2[acessarintens2] != null) {
+                        acessarintens2++;
+                            if (acessarintens2 == 7){
+                                inventarioPlayer2[limpar] = null;
+                            }
+                    }
+                    indexItem2 = random.nextInt(itensDisponiveis.length);
+
+                }else {
+                    indexItem2 = random.nextInt(itensDisponiveis.length);
+                }
+                inventarioPlayer2[acessarintens2] = itensDisponiveis[indexItem2];
+
+
+            }
+        
         }
-    }
+    
     
 
     public static void imprimirInventario(int jogador) {
@@ -340,18 +379,47 @@ public class Roleta {
         AnimatedText.Animatext("  Rodada de " + player1Nome + ": ", 0, 1, 50,150);
         AnimatedText.Animatext("╚═════════════════════════╝", 0, 8, 5,150);
 
+        AnimatedText.Animatext("Status: " + player1Nome , 0, 2, 0,10 );
+        AnimatedText.Animatext("Vida: " + VidaPlayer1, 0, 1, 0,10 );
+        AnimatedText.Animatext("Balas na arma: " + numerbalas, 0, 1, 0,10 );
+        AnimatedText.Animatext("Nao esta preso" , 0, 1, 0,10 );
+
+            if (AmuletoPlayer1 == true){
+                AnimatedText.Animatext("Amuleto ativo", 0, 3, 0,10 );
+
+            }else {
+                AnimatedText.Animatext("Alumeto quebrado ", 0, 3, 0,10 );
+
+            }
+
+
         Animação.arma();
+
         
-       
-        AnimatedText.Animatext("", 15, 0, 5,50 );
+        AnimatedText.Animatext("", 5, 0, 0,10 );
+        AnimatedText.Animatext("1- Atirar em si", 0, 0, 5,50 );
+        AnimatedText.Animatext("2- Atirar ", 0, 0, 5,150 );
+
+
+
+        AnimatedText.Animatext("Inventario", 15, 1, 5,150 );
+
+        AnimatedText.Animatext("══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════", 0, 1, 5,150);
+        AnimatedText.Animatext("", 0, 0, 5,50 );
+
         for (String item : inventarioPlayer1) {
             if (item != null) {
-                AnimatedText.Animatext( publicaçaoDeitem +"- |" + item + "|", 0, 0, 5,20);
+
+                AnimatedText.Animatext( publicaçaoDeitem +"- " + item , 0, 0, 5,30);
+
             } else {
-                AnimatedText.Animatext(" |vazio|", 0, 0, 5,20);
+                AnimatedText.Animatext(" vazio", 0, 0, 5,20);
             }
             publicaçaoDeitem++;
         }
+
+        AnimatedText.Animatext("══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════", 1, 1, 5,150);
+
 
 
        
@@ -364,18 +432,41 @@ public class Roleta {
         AnimatedText.Animatext("  Rodada de " + player2Nome + ": ", 0, 1, 50,150);
         AnimatedText.Animatext("╚═════════════════════════╝", 0, 8, 5,150);
 
+        AnimatedText.Animatext("Status: " + player2Nome , 0, 2, 0,10 );
+        AnimatedText.Animatext("Vida: " + VidaPlayer2, 0, 1, 0,10 );
+        AnimatedText.Animatext("Balas na arma: " + numerbalas, 0, 1, 0,10 );
+        AnimatedText.Animatext("Nao esta preso" , 0, 1, 0,10 );
+
+            if (AmuletoPlayer2 == true){
+                AnimatedText.Animatext("Amuleto ativo", 0, 3, 0,10 );
+
+            }else {
+                AnimatedText.Animatext("Alumeto quebrado " , 0, 3, 0,10 );
+
+            }
         Animação.arma();
+
+
+        AnimatedText.Animatext("", 5, 0, 0,10 );
+        AnimatedText.Animatext("1- Atirar em si", 0, 0, 5,50 );
+        AnimatedText.Animatext("2- Atirar ", 0, 0, 5,150 );
         
        
-        AnimatedText.Animatext("", 15, 0, 5,50 );
+        AnimatedText.Animatext("Inventario", 15, 1, 5,150 );
+
+        AnimatedText.Animatext("══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════", 0, 1, 5,150);
+        AnimatedText.Animatext("", 0, 0, 5,50 );
+
         for (String item : inventarioPlayer2) {
             if (item != null) {
-                AnimatedText.Animatext( publicaçaoDeitem +"- |" + item + "|", 0, 0, 5,20);
+                AnimatedText.Animatext( publicaçaoDeitem +"- " + item , 0, 0, 5,30);
             } else {
-                AnimatedText.Animatext(" |vazio|", 0, 0, 5,20);
+                AnimatedText.Animatext(" vazio", 0, 0, 5,30);
             }
             publicaçaoDeitem++;
         }
+
+        AnimatedText.Animatext("══════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════", 1, 1, 5,150);
 
 
 
@@ -873,6 +964,7 @@ public class Roleta {
     }
     
     public static void iniciarJogo(){
+
         contadorGlobal = 0;
 
         while (VidaPlayer1 > 0 || VidaPlayer2 > 0) {
@@ -901,26 +993,21 @@ public class Roleta {
         }
    }
 
-   public static void Gameplay(){
+public static void Gameplay(){
 
-System.out.print("Vida"+ player1Nome+": ");
-for ( int contadorvida = 0; contadorvida <= VidaPlayer1; contadorvida++ ){
-    System.out.print("❤︎");
+AnimatedText.Animatext("Numero de balas:" + numerbalas, 3, 2, 150, 150);
 
-}
+Timer(1000);
 
-System.out.print("Vida"+ player2Nome+": ");
-for ( int contadorvida = 0; contadorvida <= VidaPlayer2; contadorvida++ ){
-    System.out.print("♥");
+AnimatedText.Animatext("Vida"+ player1Nome+": " + VidaPlayer1, 1, 0, 30, 10);
 
-}
+AnimatedText.Animatext("Vida"+ player2Nome+": " + VidaPlayer2, 1, 1, 30, 10);
 
-    System.out.printf("\n\nNumero de balas: %d\n\nVidas: %s: %d  | %s: %d\n\n" ,numerbalas, player1Nome,VidaPlayer1,player2Nome,VidaPlayer2);
+Timer(3000);
+Limparterminal();
 
-                     for(contadorGlobal = 0; contadorGlobal < 12; contadorGlobal++){
-
-                        rodada(jogador1);
-        }
+rodada(jogador1);
+        
    }
 
    public static void logo( ){
@@ -943,7 +1030,13 @@ for ( int contadorvida = 0; contadorvida <= VidaPlayer2; contadorvida++ ){
                     tocar.start();
         }
     
-    public static void Remanejamento(){
+    public static void Timer(int timer){
+
+        try {
+            Thread.sleep(timer);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
     
