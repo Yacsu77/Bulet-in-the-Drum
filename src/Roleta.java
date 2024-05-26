@@ -30,6 +30,7 @@ public class Roleta {
      * B para bala B = bala "esta cheio"
      */
     public static String roleta[] = new String[12];
+    public static int numerocontavel = 13;
 
 /*
  * contador global serve apara as rodadas e os itens serem acessados por ele 
@@ -135,8 +136,7 @@ public class Roleta {
             }
         }
     }
-
-    
+   
     public static void menudeinteraçao() {
         
         Limparterminal();
@@ -253,7 +253,6 @@ public class Roleta {
                 break;
             }
         }
-
     
     public static void numeroDebalas() {
         numerbalas = 0; // Resetar o contador
@@ -264,10 +263,13 @@ public class Roleta {
         }
     }
     
-    
     public static void rodada(int jogador) {
 
-        if (contadorGlobal == 2){
+        if(VidaPlayer1 <= 0 || VidaPlayer2 <= 0){
+        Gameplay();
+        }
+
+        if (contadorGlobal == 11){
 
             AnimatedText.Animatext("Recarregando Arma...", 3, 2, 150, 150);
 
@@ -287,6 +289,7 @@ public class Roleta {
             imprimirInventario(jogador1);
             AnimatedText.Animatext("Escolha: ", 1, 0, 20, 150);
             escolhaplayer1 = ler.nextInt();
+            tocarclick();
             escolhaDoJogador(jogador1, escolhaplayer1);
            
 
@@ -302,6 +305,7 @@ public class Roleta {
             imprimirInventario(jogador2);
             AnimatedText.Animatext("Escolha: ", 1, 0, 20, 150);
             escolhaplayer2 = ler.nextInt();
+            tocarclick();
             escolhaDoJogador(jogador2, escolhaplayer2);
            
 
@@ -310,7 +314,6 @@ public class Roleta {
         }
     }
     
-
     public static void distribuirItens() {
         String[] itensDisponiveis = {Lupa, Potederemedio, Faca, cigarro, Algema, Amuleto};
         Random random = new Random();
@@ -320,7 +323,7 @@ public class Roleta {
         int indexItem1 =0;
         int indexItem2 =0;
 
-            for (int cont = 0; cont < 4; cont++) {
+            for (int cont = 0; cont < 6; cont++) {
 
                 if(acessarintens1 == 7 ){
                     acessarintens1 = 0;
@@ -368,8 +371,6 @@ public class Roleta {
         
         }
     
-    
-
     public static void imprimirInventario(int jogador) {
         int publicaçaoDeitem = 3;
 
@@ -381,7 +382,7 @@ public class Roleta {
 
         AnimatedText.Animatext("Status: " + player1Nome , 0, 2, 0,10 );
         AnimatedText.Animatext("Vida: " + VidaPlayer1, 0, 1, 0,10 );
-        AnimatedText.Animatext("Balas na arma: " + numerbalas, 0, 1, 0,10 );
+        AnimatedText.Animatext("Balas na arma: " + (numerocontavel - 1), 0, 1, 0,10 );
         AnimatedText.Animatext("Nao esta preso" , 0, 1, 0,10 );
 
             if (AmuletoPlayer1 == true){
@@ -434,7 +435,7 @@ public class Roleta {
 
         AnimatedText.Animatext("Status: " + player2Nome , 0, 2, 0,10 );
         AnimatedText.Animatext("Vida: " + VidaPlayer2, 0, 1, 0,10 );
-        AnimatedText.Animatext("Balas na arma: " + numerbalas, 0, 1, 0,10 );
+        AnimatedText.Animatext("Balas na arma: " + (numerocontavel - 1), 0, 1, 0,10 );
         AnimatedText.Animatext("Nao esta preso" , 0, 1, 0,10 );
 
             if (AmuletoPlayer2 == true){
@@ -475,41 +476,38 @@ public class Roleta {
     }
 }    
     
-
     public static void usarPoteDeRemedio(int jogador) {
     Limparterminal();
 
     Animação.Animaçãoremedio();
 
         if (jogador == 1) {
-            System.out.println("Jogador 1 usou o pote de remédio");
+            AnimatedText.Animatext("Jogador 1 usou o pote de remédio", 1, 1, 150, 150);
             VidaPlayer1++;
-            System.out.println("Vida atualizada: Vida" + VidaPlayer1);
             rodada(jogador1);
 
         } else if (jogador == 2) {
-            System.out.println("Jogador 2 usou o pote de remédio");
+            AnimatedText.Animatext("Jogador 2 usou o pote de remédio", 1, 1, 150, 150);
             VidaPlayer2++;
-            System.out.println("Vida atualizada: Vida" + VidaPlayer2);
             rodada(jogador2);
 
         } else {
             System.out.println("Jogador inválido");
         }
+
+        Timer(1000);
     }
   
-
     public static void usarlupa(int jogador){
     Limparterminal();
 
     Animação.AnimaçãoLupa();
-        System.out.println("Voce usou a lupa 🔍");
 
                 if ( roleta[contadorGlobal].equals("V")){
-                    System.out.println("Não Há balas no Cartucho");
+                    AnimatedText.Animatext("Não Há uma bala no Cartucho", 1, 1, 150, 150);
 
                 }else if ( roleta[contadorGlobal].equals("B")){
-                    System.out.println("Há uma bala no cartucho");
+                    AnimatedText.Animatext("Há uma bala no Cartucho", 1, 1, 150, 150);
                 }else{
                     System.err.println("Erro");
                 }
@@ -523,8 +521,9 @@ public class Roleta {
                 }else {
                     System.err.println("Erro");
                 }
-        }
 
+                Timer(1000);
+        }
 
     public static void faca(int jogador){
     Limparterminal();
@@ -551,8 +550,9 @@ public class Roleta {
                 }else {
                     System.err.println("Erro");
                 }
-        }
 
+                Timer(1000);
+        }
 
     public static void Cigarro(int jogador){
     Limparterminal();
@@ -567,11 +567,12 @@ public class Roleta {
 
                 if (numeroAleatorio == 1){
                     VidaPlayer1--;
-                    System.out.printf("Fumar não é legal\nVida: %d ", VidaPlayer1);
+                    AnimatedText.Animatext("Fumar não é legal", 1, 1, 150, 150);
 
                 }else if (numeroAleatorio == 2){
                     VidaPlayer1++;
-                    System.out.printf("Esse cigarro estava bom de mais\nVida: %d", VidaPlayer1);
+                    AnimatedText.Animatext("Esse cigarro estava bom de mais", 1, 1, 150, 150);
+
 
                 }else {
                     System.out.println("Erro");
@@ -581,11 +582,11 @@ public class Roleta {
 
                 if (numeroAleatorio == 1){
                     VidaPlayer2--;
-                    System.out.printf("Fumar não é legal\nVida: %d ", VidaPlayer2);
+                    AnimatedText.Animatext("Fumar não é legal", 1, 1, 150, 150);
 
                 }else if (numeroAleatorio == 2){
                     VidaPlayer2++;
-                    System.out.printf("Esse cigarro estava bom de mais\nVida: %d", VidaPlayer2);
+                    AnimatedText.Animatext("Esse cigarro estava bom de mais", 1, 1, 150, 150);
 
                 }else {
                     System.out.println("Erro");
@@ -601,9 +602,10 @@ public class Roleta {
             }else {
                 System.err.println("Erro");
             }
+
+            Timer(1000);
            
     }
-
 
    public static void Amuleto(int jogador){
     Limparterminal();
@@ -612,18 +614,21 @@ public class Roleta {
 
         if( jogador == 1){
             AmuletoPlayer1 = true;
-            System.out.println("Voçê usou o amuleto.");
+
+            AnimatedText.Animatext("Voçê usou o amuleto.", 1, 1, 150, 150);
             rodada(jogador1);
 
         }else if ( jogador == 2){
             AmuletoPlayer2 = true;
-            System.out.println("Voçê usou o amuleto.");
+
+            AnimatedText.Animatext("Voçê usou o amuleto.", 1, 1, 150, 150);
             rodada(jogador2);
         }
 
+        Timer(1000);
+
         
    }
-
 
    public static void Algema( int jogador){
     Limparterminal();
@@ -632,10 +637,16 @@ public class Roleta {
 
         if ( jogador == 1){
             Jogador2preso = true;
+            AnimatedText.Animatext("Jogador 2 Preso", 1, 1, 150, 150);
+            rodada(jogador1);
             
         }else if ( jogador == 2){
             Jogador1preso = true;
+            AnimatedText.Animatext("Jogador 1 Preso", 1, 1, 150, 150);
+            rodada(jogador2);
         }
+
+        Timer(1000);
    }
 
    public static void VerificaçãoItemUtilizado(int jogador, int acesso){
@@ -734,19 +745,26 @@ public class Roleta {
                     AnimatedText.Animatext("Putz vc tomou o tiro", 4, 1, 5,150);  
                     VidaPlayer1 = VidaPlayer1 - DanoGlobal;
                     contadorGlobal++;
+                    DanoGlobal = 1;
                     rodada(jogador1);
 
                 }else if (roleta[contadorGlobal].equals("B") && AmuletoPlayer1 == true){
+
+                    Animação.Tomartiro();
+
                     System.out.println("Boa o amuleto te salvou desa!! Fique esperto.");
                     AmuletoPlayer1 = false;
                     contadorGlobal++;
+                    DanoGlobal = 1;
                     rodada(jogador1);
 
                 }else if ( roleta[contadorGlobal].equals("V")){
 
                     Animação.Noaotomartiro();
-                    AnimatedText.Animatext("Boa, vc se livrou dessa!!", 4, 1, 5,150);
+
+                    AnimatedText.Animatext("Boa, vc se livrou dessa!!", 2, 1, 5,150);
                         contadorGlobal++;
+                        DanoGlobal= 1;
                         rodada(jogador1);
                 }else {
                     System.err.println("Erro");
@@ -764,13 +782,17 @@ public class Roleta {
 
                     VidaPlayer2 = VidaPlayer2 - DanoGlobal;
                     contadorGlobal++;
+                    DanoGlobal = 1; 
                     rodada(jogador2);
 
                 }else if (roleta[contadorGlobal].equals("B") && AmuletoPlayer2 == true){
 
+                    Animação.Acertartiro();
+
                     AnimatedText.Animatext("O Player 2 tinha um amuleto e ele se salvou do seu tiro!!", 1, 1, 20,150);
                     AmuletoPlayer2 = false;
                     contadorGlobal++;
+                    DanoGlobal = 1;
                     rodada(jogador2);
 
                 }else if ( roleta[contadorGlobal].equals("V")){
@@ -779,6 +801,7 @@ public class Roleta {
 
                     AnimatedText.Animatext("Ops!! vc errou.", 1, 1, 20,150);
                     contadorGlobal++;
+                    DanoGlobal= 1;
                     rodada(jogador2);
                 }else {
                     System.out.println("Erro");
@@ -844,14 +867,20 @@ public class Roleta {
                     AnimatedText.Animatext("Putz vc tomou um tiro...", 1, 1, 20,150);
                     VidaPlayer2 = VidaPlayer2 - DanoGlobal;
                     contadorGlobal++;
+                    DanoGlobal = 1; 
+
                     rodada(jogador2);
 
                 }else if (roleta[contadorGlobal].equals("B") && AmuletoPlayer1 == true){
+
+                    Animação.Tomartiro();
 
                     AnimatedText.Animatext("Boa, o amuleto te salvou dessa!! Fique esperto.", 1, 1, 20,150);
 
                     AmuletoPlayer2 = false;
                     contadorGlobal++;
+                    DanoGlobal = 1; 
+
                     rodada(jogador2);
 
                 }else if ( roleta[contadorGlobal].equals("V")){
@@ -860,6 +889,8 @@ public class Roleta {
 
                     AnimatedText.Animatext("Boa vc acertou esse tiro", 1, 1, 20,150);
                     contadorGlobal++;
+                    DanoGlobal = 1; 
+
                     rodada(jogador2);
 
                 }else {
@@ -878,14 +909,20 @@ public class Roleta {
                     
                     VidaPlayer1 = VidaPlayer1 - DanoGlobal;
                     contadorGlobal++;
+                    DanoGlobal = 1; 
+
                     rodada(jogador1);
 
                 }else if (roleta[contadorGlobal].equals("B") && AmuletoPlayer1 == true){
+
+                    Animação.Acertartiro();
 
                     AnimatedText.Animatext("O Player 1 tinha um amuleto e ele se salvou do seu tiro!!", 1, 1, 20,150);
 
                     AmuletoPlayer1 = false;
                     contadorGlobal++;
+                    DanoGlobal = 1; 
+
                     rodada(jogador1);
 
                 }else if ( roleta[contadorGlobal].equals("V")){
@@ -895,6 +932,8 @@ public class Roleta {
                     AnimatedText.Animatext("Ops!! vc errou...", 1, 1, 20,150);
 
                     contadorGlobal++;
+                    DanoGlobal = 1; 
+
                     rodada(jogador1);
                 }else {
                     System.out.println("Erro");
@@ -970,17 +1009,48 @@ public class Roleta {
         while (VidaPlayer1 > 0 || VidaPlayer2 > 0) {
 
             if ( VidaPlayer1 <= 0){
-                System.out.println(player2Nome + "Ganhou");
-                break;
+                int numeralconta = 5;
+                Limparterminal();
+                AnimatedText.Animatext(player2Nome + "Ganhou", 5, 1, 150, 150);
+                
+                AnimatedText.Animatext("Jogar novamente", 5, 1, 150, 150);
+                Timer(5000);
+
+                Limparterminal();
+                for(int cont = 0; cont < numeralconta; numeralconta--){
+
+                AnimatedText.Animatext("numeralconta", 1, 1, 150, 150);
+                Timer(1000);
+                Limparterminal();
+                }
+                
+                menudeinteraçao();
+
             }else if ( VidaPlayer2 <= 0){
-                System.out.println(player1Nome + "Ganhou");
-                break;
+                int numeralconta = 5;
+                Limparterminal();
+                AnimatedText.Animatext(player1Nome + "Ganhou", 5, 1, 150, 150);
+                
+                AnimatedText.Animatext("Jogar novamente", 5, 1, 150, 150);
+                Timer(5000);
+
+                Limparterminal();
+                for(int cont = 0; cont < numeralconta; numeralconta--){
+
+                AnimatedText.Animatext("numeralconta", 1, 1, 150, 150);
+                Timer(1000);
+                Limparterminal();
+                }
+                
+                menudeinteraçao();
+
             }else {
 
             embaralha_roleta();
             numeroDebalas();
             distribuirItens();
             contadorGlobal = 0; // reseta o contador 
+            numerocontavel = 13;
             Limparterminal();
 
             AnimatedText.Animatext("|A Rodada Começou|", 4, 2,100,150);
@@ -993,20 +1063,20 @@ public class Roleta {
         }
    }
 
-public static void Gameplay(){
+    public static void Gameplay(){
 
-AnimatedText.Animatext("Numero de balas:" + numerbalas, 3, 2, 150, 150);
+    AnimatedText.Animatext("Numero de balas:" + numerbalas, 3, 2, 150, 150);
 
-Timer(1000);
+    Timer(1000);
 
-AnimatedText.Animatext("Vida"+ player1Nome+": " + VidaPlayer1, 1, 0, 30, 10);
+    AnimatedText.Animatext("Vida "+ player1Nome+": " + VidaPlayer1, 1, 0, 30, 10);
 
-AnimatedText.Animatext("Vida"+ player2Nome+": " + VidaPlayer2, 1, 1, 30, 10);
+    AnimatedText.Animatext("Vida "+ player2Nome+": " + VidaPlayer2, 1, 1, 30, 10);
 
-Timer(3000);
-Limparterminal();
+    Timer(3000);
+    Limparterminal();
 
-rodada(jogador1);
+    rodada(jogador1);
         
    }
 
@@ -1024,11 +1094,10 @@ rodada(jogador1);
             
         }
     
-    
-        public static void tocarclick(){
-            Thread tocar = new Thread(()->sombeta.som1("click.wav"));
-                    tocar.start();
-        }
+    public static void tocarclick(){
+        Thread tocar = new Thread(()->sombeta.som1("click.wav"));
+                tocar.start();
+    }
     
     public static void Timer(int timer){
 
