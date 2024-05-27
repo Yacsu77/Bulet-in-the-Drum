@@ -4,7 +4,6 @@ import java.io.File;
 
 public class sombeta {
     public static Clip clip; // Mantenha referência ao Clip atual
-
     public static void main(String[] args) {
         // Main method não faz nada aqui, pode ser usado para teste
     }

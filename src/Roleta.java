@@ -1,4 +1,3 @@
-import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -44,8 +43,6 @@ public class Roleta {
 
     public static int Chaveparainvetario = 0;
 
-    public static String coraçãovida = ":heart:";
-    public static String coraçãomorte = ":skull:";
 
 
 
@@ -266,8 +263,7 @@ public class Roleta {
     public static void rodada(int jogador) {
 
         if(VidaPlayer1 <= 0 || VidaPlayer2 <= 0){
-        Gameplay();
-        }
+        iniciarJogo();        }
 
         if (contadorGlobal == 11){
 
@@ -323,7 +319,7 @@ public class Roleta {
         int indexItem1 =0;
         int indexItem2 =0;
 
-            for (int cont = 0; cont < 6; cont++) {
+            for (int cont = 0; cont < 4; cont++) {
 
                 if(acessarintens1 == 7 ){
                     acessarintens1 = 0;
@@ -743,6 +739,7 @@ public class Roleta {
                     Animação.Tomartiro();
 
                     AnimatedText.Animatext("Putz vc tomou o tiro", 4, 1, 5,150);  
+                    numerocontavel = numerocontavel -1;
                     VidaPlayer1 = VidaPlayer1 - DanoGlobal;
                     contadorGlobal++;
                     DanoGlobal = 1;
@@ -753,6 +750,7 @@ public class Roleta {
                     Animação.Tomartiro();
 
                     System.out.println("Boa o amuleto te salvou desa!! Fique esperto.");
+                    numerocontavel = numerocontavel -1;
                     AmuletoPlayer1 = false;
                     contadorGlobal++;
                     DanoGlobal = 1;
@@ -763,6 +761,7 @@ public class Roleta {
                     Animação.Noaotomartiro();
 
                     AnimatedText.Animatext("Boa, vc se livrou dessa!!", 2, 1, 5,150);
+                    numerocontavel = numerocontavel -1;
                         contadorGlobal++;
                         DanoGlobal= 1;
                         rodada(jogador1);
@@ -779,7 +778,7 @@ public class Roleta {
                     Animação.Acertartiro();
 
                     AnimatedText.Animatext("Boa vc acertou esse tiro", 1, 1, 20,150);
-
+                    numerocontavel = numerocontavel -1;
                     VidaPlayer2 = VidaPlayer2 - DanoGlobal;
                     contadorGlobal++;
                     DanoGlobal = 1; 
@@ -790,6 +789,7 @@ public class Roleta {
                     Animação.Acertartiro();
 
                     AnimatedText.Animatext("O Player 2 tinha um amuleto e ele se salvou do seu tiro!!", 1, 1, 20,150);
+                    numerocontavel = numerocontavel -1;
                     AmuletoPlayer2 = false;
                     contadorGlobal++;
                     DanoGlobal = 1;
@@ -800,6 +800,7 @@ public class Roleta {
                     Animação.Erratiro();
 
                     AnimatedText.Animatext("Ops!! vc errou.", 1, 1, 20,150);
+                    numerocontavel = numerocontavel -1;
                     contadorGlobal++;
                     DanoGlobal= 1;
                     rodada(jogador2);
@@ -865,6 +866,7 @@ public class Roleta {
                     Animação.Tomartiro();
 
                     AnimatedText.Animatext("Putz vc tomou um tiro...", 1, 1, 20,150);
+                    numerocontavel = numerocontavel -1;
                     VidaPlayer2 = VidaPlayer2 - DanoGlobal;
                     contadorGlobal++;
                     DanoGlobal = 1; 
@@ -876,7 +878,7 @@ public class Roleta {
                     Animação.Tomartiro();
 
                     AnimatedText.Animatext("Boa, o amuleto te salvou dessa!! Fique esperto.", 1, 1, 20,150);
-
+                    numerocontavel = numerocontavel -1;
                     AmuletoPlayer2 = false;
                     contadorGlobal++;
                     DanoGlobal = 1; 
@@ -888,6 +890,7 @@ public class Roleta {
                     Animação.Noaotomartiro();
 
                     AnimatedText.Animatext("Boa vc acertou esse tiro", 1, 1, 20,150);
+                    numerocontavel = numerocontavel -1;
                     contadorGlobal++;
                     DanoGlobal = 1; 
 
@@ -906,7 +909,7 @@ public class Roleta {
                     Animação.Acertartiro();
 
                     AnimatedText.Animatext("Boa vc acertou esse tiro", 1, 1, 20,150);
-                    
+                    numerocontavel = numerocontavel -1;  
                     VidaPlayer1 = VidaPlayer1 - DanoGlobal;
                     contadorGlobal++;
                     DanoGlobal = 1; 
@@ -918,7 +921,7 @@ public class Roleta {
                     Animação.Acertartiro();
 
                     AnimatedText.Animatext("O Player 1 tinha um amuleto e ele se salvou do seu tiro!!", 1, 1, 20,150);
-
+                    numerocontavel = numerocontavel -1;
                     AmuletoPlayer1 = false;
                     contadorGlobal++;
                     DanoGlobal = 1; 
@@ -930,7 +933,7 @@ public class Roleta {
                     Animação.Erratiro();
 
                     AnimatedText.Animatext("Ops!! vc errou...", 1, 1, 20,150);
-
+                    numerocontavel = numerocontavel -1;
                     contadorGlobal++;
                     DanoGlobal = 1; 
 
